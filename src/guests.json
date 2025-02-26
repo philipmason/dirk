@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Fred",
+        "id": "6f048334-62cb-4c07-9e96-e54ebe14435b",
+        "invited1": true,
+        "invited2": false
+    },
+    {
+        "name": "Sue",
+        "id": "9d02e175-ff15-44a9-a634-da70d0926e2f",
+        "invited1": true,
+        "invited2": true
+    }
+]
