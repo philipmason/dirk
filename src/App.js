@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 // http://localhost:3001/?id=9d02e175-ff15-44a9-a634-da70d0926e2f
 
 function App() {
-  const {  search } = window.location,
+  const { search } = window.location,
     searchParams = new URLSearchParams(search),
     id = searchParams.get("id"),
     // [guests, setGuests] = useState([]),
@@ -21,9 +21,12 @@ function App() {
     [q1, setQ1] = useState(false),
     [q2, setQ2] = useState(false),
     [q3, setQ3] = useState(""),
+    // prefix = "https://sleepy-wave-20058-78beaf0578d1.herokuapp.com",
+    prefix = "http://81.141.65.156:3000",
     saveAnswers = () => {
       const url =
-        "http://localhost:3000/sql/wedding/insert%20into%20responses" +
+        prefix +
+        "/sql/wedding/insert%20into%20responses" +
         "(id,name,response1,response2,dietary)%20" +
         `values('${id}','${who}',${q1},${q2},'${q3}')`;
       // use fetch to write the answers to the server
@@ -33,7 +36,7 @@ function App() {
     };
 
   useEffect(() => {
-    fetch("http://localhost:3000/guests")
+    fetch(prefix + "/guests")
       .then((response) => response.json())
       .then((response) => {
         const tempGuests = response.data;
@@ -57,9 +60,9 @@ function App() {
         backgroundSize: "900px 400px",
       }}
     >
-      <h1>Dirk & Tina's Celebrations</h1>
+      <h1>Dirk & Tine's Celebrations</h1>
       <Box>Welcome {who}</Box>
-      {event1 && (
+      {Boolean(event1) && (
         <Box>
           <hr />
           <h3>Event 1</h3>
@@ -67,7 +70,7 @@ function App() {
           <Checkbox checked={q1} onChange={handleChangeEvent1} />
         </Box>
       )}
-      {event2 && (
+      {Boolean(event2) && (
         <Box>
           <hr />
           <h3>Event 2</h3>

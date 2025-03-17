@@ -9,8 +9,12 @@ npm start
 # Open browser for a guest, using unique id provided for them
 http://localhost:3001/?id=6f048334-62cb-4c07-9e96-e54ebe14435b
 http://localhost:3001/?id=9d02e175-ff15-44a9-a634-da70d0926e2f
-
 http://localhost:3000/sql/wedding/select%20*%20from%20guests
+
+# web app
+https://divakru.be/?id=6f048334-62cb-4c07-9e96-e54ebe14435b
+https://divakru.be/?id=9d02e175-ff15-44a9-a634-da70d0926e2f
+https://divakru.be/sql/wedding/select%20*%20from%20guests
 
 # heroku deployment
 https://sleepy-wave-20058-78beaf0578d1.herokuapp.com/guests
